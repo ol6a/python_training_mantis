@@ -1,7 +1,7 @@
 from selenium import webdriver
 from fixture.session import SessionHelper
 from fixture.project import ProjectHelper
-
+from fixture.soap import SoapHelper
 class Application:
     def __init__(self, browser, base_url):
         if browser == "firefox":
@@ -15,6 +15,7 @@ class Application:
         self.wd.implicitly_wait(2)
         self.session = SessionHelper(self)
         self.project = ProjectHelper(self)
+        self.soap = SoapHelper(self)
         self.base_url = base_url
 
 
